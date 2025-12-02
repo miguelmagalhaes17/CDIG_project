@@ -33,6 +33,88 @@ options:
     state: enabled
 
 blocks:
+- name: freq
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[''  1 | 2412.0 | 11g'', ''  2 | 2417.0 | 11g'', ''  3 | 2422.0 | 11g'',
+      ''  4 | 2427.0 | 11g'', ''  5 | 2432.0 | 11g'', ''  6 | 2437.0 | 11g'', ''  7
+      | 2442.0 | 11g'', ''  8 | 2447.0 | 11g'', ''  9 | 2452.0 | 11g'', '' 10 | 2457.0
+      | 11g'', '' 11 | 2462.0 | 11g'', '' 12 | 2467.0 | 11g'', '' 13 | 2472.0 | 11g'',
+      '' 14 | 2484.0 | 11g'', '' 34 | 5170.0 | 11a'', '' 36 | 5180.0 | 11a'', '' 38
+      | 5190.0 | 11a'', '' 40 | 5200.0 | 11a'', '' 42 | 5210.0 | 11a'', '' 44 | 5220.0
+      | 11a'', '' 46 | 5230.0 | 11a'', '' 48 | 5240.0 | 11a'', '' 50 | 5250.0 | 11a'',
+      '' 52 | 5260.0 | 11a'', '' 54 | 5270.0 | 11a'', '' 56 | 5280.0 | 11a'', '' 58
+      | 5290.0 | 11a'', '' 60 | 5300.0 | 11a'', '' 62 | 5310.0 | 11a'', '' 64 | 5320.0
+      | 11a'', ''100 | 5500.0 | 11a'', ''102 | 5510.0 | 11a'', ''104 | 5520.0 | 11a'',
+      ''106 | 5530.0 | 11a'', ''108 | 5540.0 | 11a'', ''110 | 5550.0 | 11a'', ''112
+      | 5560.0 | 11a'', ''114 | 5570.0 | 11a'', ''116 | 5580.0 | 11a'', ''118 | 5590.0
+      | 11a'', ''120 | 5600.0 | 11a'', ''122 | 5610.0 | 11a'', ''124 | 5620.0 | 11a'',
+      ''126 | 5630.0 | 11a'', ''128 | 5640.0 | 11a'', ''132 | 5660.0 | 11a'', ''134
+      | 5670.0 | 11a'', ''136 | 5680.0 | 11a'', ''138 | 5690.0 | 11a'', ''140 | 5700.0
+      | 11a'', ''142 | 5710.0 | 11a'', ''144 | 5720.0 | 11a'', ''149 | 5745.0 | 11a
+      (SRD)'', ''151 | 5755.0 | 11a (SRD)'', ''153 | 5765.0 | 11a (SRD)'', ''155 |
+      5775.0 | 11a (SRD)'', ''157 | 5785.0 | 11a (SRD)'', ''159 | 5795.0 | 11a (SRD)'',
+      ''161 | 5805.0 | 11a (SRD)'', ''165 | 5825.0 | 11a (SRD)'', ''172 | 5860.0 |
+      11p'', ''174 | 5870.0 | 11p'', ''176 | 5880.0 | 11p'', ''178 | 5890.0 | 11p'',
+      ''180 | 5900.0 | 11p'', ''182 | 5910.0 | 11p'', ''184 | 5920.0 | 11p'']'
+    num_opts: '0'
+    option0: '0'
+    option1: '1'
+    option2: '2'
+    option3: '3'
+    option4: '4'
+    options: '[2412000000.0, 2417000000.0, 2422000000.0, 2427000000.0, 2432000000.0,
+      2437000000.0, 2442000000.0, 2447000000.0, 2452000000.0, 2457000000.0, 2462000000.0,
+      2467000000.0, 2472000000.0, 2484000000.0, 5170000000.0, 5180000000.0, 5190000000.0,
+      5200000000.0, 5210000000.0, 5220000000.0, 5230000000.0, 5240000000.0, 5250000000.0,
+      5260000000.0, 5270000000.0, 5280000000.0, 5290000000.0, 5300000000.0, 5310000000.0,
+      5320000000.0, 5500000000.0, 5510000000.0, 5520000000.0, 5530000000.0, 5540000000.0,
+      5550000000.0, 5560000000.0, 5570000000.0, 5580000000.0, 5590000000.0, 5600000000.0,
+      5610000000.0, 5620000000.0, 5630000000.0, 5640000000.0, 5660000000.0, 5670000000.0,
+      5680000000.0, 5690000000.0, 5700000000.0, 5710000000.0, 5720000000.0, 5745000000.0,
+      5755000000.0, 5765000000.0, 5775000000.0, 5785000000.0, 5795000000.0, 5805000000.0,
+      5825000000.0, 5860000000.0, 5870000000.0, 5880000000.0, 5890000000.0, 5900000000.0,
+      5910000000.0, 5920000000.0]'
+    orient: Qt.QVBoxLayout
+    type: real
+    value: '5890000000'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 24.0]
+    rotation: 0
+    state: enabled
+- name: gain
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.01'
+    stop: '1'
+    value: '0.75'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [968, 24.0]
+    rotation: 0
+    state: enabled
 - name: samp_rate
   id: variable
   parameters:
@@ -43,6 +125,30 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [416, 24.0]
+    rotation: 0
+    state: enabled
+- name: sync_length
+  id: variable
+  parameters:
+    comment: ''
+    value: '320'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [600, 24.0]
+    rotation: 0
+    state: enabled
+- name: sync_length_0
+  id: variable
+  parameters:
+    comment: ''
+    value: '320'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [696, 24.0]
     rotation: 0
     state: enabled
 - name: window_size
@@ -188,7 +294,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_items: '2'
+    num_items: '64'
     type: complex
     vlen: '1'
   states:
@@ -198,41 +304,20 @@ blocks:
     coordinate: [752, 472.0]
     rotation: 180
     state: enabled
-- name: digital_ofdm_frame_equalizer_vcvc_0
-  id: digital_ofdm_frame_equalizer_vcvc
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    cp_len: fft_len/4
-    equalizer: ''
-    fft_len: fft_len
-    fixed_frame_len: '0'
-    len_tag_key: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    propagate_channel_state: 'True'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [264, 664.0]
-    rotation: 0
-    state: enabled
 - name: fft_vxx_0
   id: fft_vxx
   parameters:
     affinity: ''
     alias: ''
     comment: ''
-    fft_size: '1024'
+    fft_size: '64'
     forward: 'True'
     maxoutbuf: '0'
     minoutbuf: '0'
     nthreads: '1'
     shift: 'True'
     type: complex
-    window: window.blackmanharris(1024)
+    window: window.rectangular(64)
   states:
     bus_sink: false
     bus_source: false
@@ -278,7 +363,7 @@ blocks:
     coordinate: [1000, 320.0]
     rotation: 0
     state: enabled
-- name: ieee802_11_decode_mac_0
+- name: ieee802_11_decode_mac_1
   id: ieee802_11_decode_mac
   parameters:
     affinity: ''
@@ -292,7 +377,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1104, 688.0]
+    coordinate: [736, 608.0]
     rotation: 0
     state: enabled
 - name: ieee802_11_frame_equalizer_0
@@ -312,7 +397,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [352, 608.0]
+    coordinate: [472, 600.0]
     rotation: 0
     state: enabled
 - name: ieee802_11_sync_long_0
@@ -325,7 +410,7 @@ blocks:
     log: 'False'
     maxoutbuf: '0'
     minoutbuf: '0'
-    sync_length: '240'
+    sync_length: '320'
   states:
     bus_sink: false
     bus_source: false
@@ -344,7 +429,7 @@ blocks:
     maxoutbuf: '0'
     min_plateau: '2'
     minoutbuf: '0'
-    threshold: '0.8'
+    threshold: '0.56'
   states:
     bus_sink: false
     bus_source: false
@@ -383,23 +468,139 @@ blocks:
     coordinate: [256, 172.0]
     rotation: 0
     state: enabled
+- name: pdu_pdu_to_tagged_stream_0
+  id: pdu_pdu_to_tagged_stream
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tag: packet_len
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 736.0]
+    rotation: 180
+    state: enabled
+- name: qtgui_const_sink_x_0
+  id: qtgui_const_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '0'
+    marker10: '0'
+    marker2: '0'
+    marker3: '0'
+    marker4: '0'
+    marker5: '0'
+    marker6: '0'
+    marker7: '0'
+    marker8: '0'
+    marker9: '0'
+    name: '""'
+    nconnections: '1'
+    size: 48*10
+    style1: '0'
+    style10: '0'
+    style2: '0'
+    style3: '0'
+    style4: '0'
+    style5: '0'
+    style6: '0'
+    style7: '0'
+    style8: '0'
+    style9: '0'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '2'
+    xmin: '-2'
+    ymax: '2'
+    ymin: '-2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 728.0]
+    rotation: 180
+    state: enabled
 
 connections:
 - [blocks_complex_to_mag_0, '0', blocks_divide_xx_0, '0']
 - [blocks_complex_to_mag_squared_0, '0', fir_filter_xxx_0_0, '0']
 - [blocks_conjugate_cc_0, '0', blocks_multiply_xx_0, '0']
 - [blocks_delay_0, '0', blocks_conjugate_cc_0, '0']
+- [blocks_delay_0, '0', ieee802_11_sync_short_0, '0']
 - [blocks_delay_0_0, '0', ieee802_11_sync_long_0, '1']
+- [blocks_divide_xx_0, '0', ieee802_11_sync_short_0, '2']
 - [blocks_multiply_xx_0, '0', fir_filter_xxx_0, '0']
 - [blocks_stream_to_vector_0, '0', fft_vxx_0, '0']
+- [fft_vxx_0, '0', ieee802_11_frame_equalizer_0, '0']
 - [fir_filter_xxx_0, '0', blocks_complex_to_mag_0, '0']
+- [fir_filter_xxx_0, '0', ieee802_11_sync_short_0, '1']
 - [fir_filter_xxx_0_0, '0', blocks_divide_xx_0, '1']
+- [ieee802_11_frame_equalizer_0, '0', ieee802_11_decode_mac_1, '0']
+- [ieee802_11_frame_equalizer_0, symbols, pdu_pdu_to_tagged_stream_0, pdus]
 - [ieee802_11_sync_long_0, '0', blocks_stream_to_vector_0, '0']
 - [ieee802_11_sync_short_0, '0', blocks_delay_0_0, '0']
 - [ieee802_11_sync_short_0, '0', ieee802_11_sync_long_0, '0']
 - [iio_pluto_source_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [iio_pluto_source_0, '0', blocks_delay_0, '0']
 - [iio_pluto_source_0, '0', blocks_multiply_xx_0, '1']
+- [pdu_pdu_to_tagged_stream_0, '0', qtgui_const_sink_x_0, '0']
 
 metadata:
   file_format: 1
