@@ -124,7 +124,7 @@ class cdig_project(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.qwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
-        self.qtgui_sink_x_0_0_0 = qtgui.sink_c(
+        self.qtgui_sink_x_0_0_0 = qtgui.sink_f(
             64, #fftsize
             window.WIN_RECTANGULAR, #wintype
             central_freq, #fc
@@ -215,6 +215,7 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.blocks_delay_0_0 = blocks.delay(gr.sizeof_gr_complex*1, 320)
         self.blocks_delay_0 = blocks.delay(gr.sizeof_gr_complex*1, 16)
         self.blocks_conjugate_cc_0 = blocks.conjugate_cc()
+        self.blocks_complex_to_mag_squared_0_0 = blocks.complex_to_mag_squared(1)
         self.blocks_complex_to_mag_squared_0 = blocks.complex_to_mag_squared(1)
         self.blocks_complex_to_mag_0 = blocks.complex_to_mag(1)
 
@@ -228,6 +229,7 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.msg_connect((self.ieee802_11_parse_mac_0, 'out'), (self.network_socket_pdu_0, 'pdus'))
         self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_divide_xx_0, 0))
         self.connect((self.blocks_complex_to_mag_squared_0, 0), (self.fir_filter_xxx_0_0, 0))
+        self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.qtgui_sink_x_0_0_0, 0))
         self.connect((self.blocks_conjugate_cc_0, 0), (self.blocks_multiply_xx_0, 0))
         self.connect((self.blocks_delay_0, 0), (self.blocks_conjugate_cc_0, 0))
         self.connect((self.blocks_delay_0, 0), (self.ieee802_11_sync_short_0, 0))
@@ -236,7 +238,7 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_divide_xx_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.fir_filter_xxx_0, 0))
         self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))
-        self.connect((self.blocks_vector_to_stream_0, 0), (self.qtgui_sink_x_0_0_0, 0))
+        self.connect((self.blocks_vector_to_stream_0, 0), (self.blocks_complex_to_mag_squared_0_0, 0))
         self.connect((self.fft_vxx_0, 0), (self.blocks_vector_to_stream_0, 0))
         self.connect((self.fft_vxx_0, 0), (self.ieee802_11_frame_equalizer_0, 0))
         self.connect((self.fir_filter_xxx_0, 0), (self.blocks_complex_to_mag_0, 0))
