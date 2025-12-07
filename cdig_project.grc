@@ -288,6 +288,24 @@ blocks:
     coordinate: [1208, 704.0]
     rotation: 0
     state: enabled
+- name: blocks_file_sink_1
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: /home/miguel/Documents/CDIG_project/plutotofile.dat
+    type: complex
+    unbuffered: 'True'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 312.0]
+    rotation: 0
+    state: enabled
 - name: blocks_message_debug_0
   id: blocks_message_debug
   parameters:
@@ -917,6 +935,7 @@ connections:
 - [ieee802_11_sync_short_0, '0', ieee802_11_sync_long_0, '0']
 - [iio_pluto_source_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [iio_pluto_source_0, '0', blocks_delay_0, '0']
+- [iio_pluto_source_0, '0', blocks_file_sink_1, '0']
 - [iio_pluto_source_0, '0', blocks_multiply_xx_0, '1']
 - [pdu_pdu_to_tagged_stream_0, '0', qtgui_const_sink_x_0, '0']
 

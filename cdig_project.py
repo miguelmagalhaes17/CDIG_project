@@ -209,6 +209,8 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.blocks_vector_to_stream_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, 64)
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, 64)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
+        self.blocks_file_sink_1 = blocks.file_sink(gr.sizeof_gr_complex*1, '/home/miguel/Documents/CDIG_project/plutotofile.dat', False)
+        self.blocks_file_sink_1.set_unbuffered(True)
         self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, '/home/miguel/Documents/CDIG_project/wifipackets.pcap', False)
         self.blocks_file_sink_0.set_unbuffered(True)
         self.blocks_divide_xx_0 = blocks.divide_ff(1)
@@ -251,6 +253,7 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.connect((self.ieee802_11_sync_short_0, 0), (self.ieee802_11_sync_long_0, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_complex_to_mag_squared_0, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_delay_0, 0))
+        self.connect((self.iio_pluto_source_0, 0), (self.blocks_file_sink_1, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_multiply_xx_0, 1))
         self.connect((self.pdu_pdu_to_tagged_stream_0, 0), (self.qtgui_const_sink_x_0, 0))
 
