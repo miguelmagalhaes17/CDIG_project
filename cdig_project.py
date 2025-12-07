@@ -124,8 +124,8 @@ class cdig_project(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.qwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
-        self.qtgui_sink_x_0 = qtgui.sink_c(
-            1024, #fftsize
+        self.qtgui_sink_x_0_0_0 = qtgui.sink_c(
+            64, #fftsize
             window.WIN_RECTANGULAR, #wintype
             central_freq, #fc
             samp_rate, #bw
@@ -136,12 +136,12 @@ class cdig_project(gr.top_block, Qt.QWidget):
             True, #plotconst
             None # parent
         )
-        self.qtgui_sink_x_0.set_update_time(1.0/10)
-        self._qtgui_sink_x_0_win = sip.wrapinstance(self.qtgui_sink_x_0.qwidget(), Qt.QWidget)
+        self.qtgui_sink_x_0_0_0.set_update_time(1.0/10)
+        self._qtgui_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_sink_x_0_0_0.qwidget(), Qt.QWidget)
 
-        self.qtgui_sink_x_0.enable_rf_freq(False)
+        self.qtgui_sink_x_0_0_0.enable_rf_freq(False)
 
-        self.top_layout.addWidget(self._qtgui_sink_x_0_win)
+        self.top_layout.addWidget(self._qtgui_sink_x_0_0_0_win)
         self.qtgui_const_sink_x_0 = qtgui.const_sink_c(
             (48*10), #size
             "", #name
@@ -206,9 +206,10 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.fir_filter_xxx_0 = filter.fir_filter_ccf(1, [1/window_size]*window_size)
         self.fir_filter_xxx_0.declare_sample_delay(0)
         self.fft_vxx_0 = fft.fft_vcc(64, True, window.rectangular(64), True, 1)
+        self.blocks_vector_to_stream_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, 64)
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, 64)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, '/home/miguel/Desktop/wifipackets.pcap', False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, '/home/miguel/Documents/CDIG_project/wifipackets.pcap', False)
         self.blocks_file_sink_0.set_unbuffered(True)
         self.blocks_divide_xx_0 = blocks.divide_ff(1)
         self.blocks_delay_0_0 = blocks.delay(gr.sizeof_gr_complex*1, 320)
@@ -235,6 +236,8 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_divide_xx_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.fir_filter_xxx_0, 0))
         self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0, 0))
+        self.connect((self.blocks_vector_to_stream_0, 0), (self.qtgui_sink_x_0_0_0, 0))
+        self.connect((self.fft_vxx_0, 0), (self.blocks_vector_to_stream_0, 0))
         self.connect((self.fft_vxx_0, 0), (self.ieee802_11_frame_equalizer_0, 0))
         self.connect((self.fir_filter_xxx_0, 0), (self.blocks_complex_to_mag_0, 0))
         self.connect((self.fir_filter_xxx_0, 0), (self.ieee802_11_sync_short_0, 1))
@@ -247,7 +250,6 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_complex_to_mag_squared_0, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_delay_0, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_multiply_xx_0, 1))
-        self.connect((self.iio_pluto_source_0, 0), (self.qtgui_sink_x_0, 0))
         self.connect((self.pdu_pdu_to_tagged_stream_0, 0), (self.qtgui_const_sink_x_0, 0))
 
 
@@ -284,7 +286,7 @@ class cdig_project(gr.top_block, Qt.QWidget):
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
         self.iio_pluto_source_0.set_samplerate(self.samp_rate)
-        self.qtgui_sink_x_0.set_frequency_range(self.central_freq, self.samp_rate)
+        self.qtgui_sink_x_0_0_0.set_frequency_range(self.central_freq, self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
 
     def get_central_freq(self):
@@ -294,7 +296,7 @@ class cdig_project(gr.top_block, Qt.QWidget):
         self.central_freq = central_freq
         self.ieee802_11_frame_equalizer_0.set_frequency(self.central_freq)
         self.iio_pluto_source_0.set_frequency(self.central_freq)
-        self.qtgui_sink_x_0.set_frequency_range(self.central_freq, self.samp_rate)
+        self.qtgui_sink_x_0_0_0.set_frequency_range(self.central_freq, self.samp_rate)
 
 
 
