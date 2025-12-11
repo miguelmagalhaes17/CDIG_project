@@ -153,7 +153,7 @@ blocks:
     set_freq_callback: 'lambda f: self.set_center_freq(f)'
     start_freq: '400000000'
     step: '10000000'
-    stop_freq: '5000000000'
+    stop_freq: '3800000000'
   states:
     _io_cache: ('FrequencySweeper', 'FrequencySweeper', [('start_freq', '400000000.0'),
       ('stop_freq', '5000000000.0'), ('step', '10000000.0'), ('dwell_time', '0.1'),
@@ -186,9 +186,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1016, 56.0]
+    coordinate: [1016, 160.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: iio_pluto_source_0_0
   id: iio_pluto_source
   parameters:
@@ -380,6 +380,7 @@ blocks:
     state: disabled
 
 connections:
+- [blocks_stream_to_vector_0, '0', epy_block_0, '0']
 - [blocks_stream_to_vector_0, '0', fft_vxx_0, '0']
 - [fft_vxx_0, '0', epy_block_0, '0']
 - [iio_pluto_source_0_0, '0', blocks_stream_to_vector_0, '0']

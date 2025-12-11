@@ -196,7 +196,7 @@ blocks:
     bus_structure: null
     coordinate: [264, 576.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: blocks_conjugate_cc_0
   id: blocks_conjugate_cc
   parameters:
@@ -238,7 +238,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    delay: '320'
+    delay: '240'
     maxoutbuf: '0'
     minoutbuf: '0'
     num_ports: '1'
@@ -277,7 +277,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: /home/miguel/Documents/CDIG_project/wifipackets.pcap
+    file: /home/miguel/Documents/wifipackets2.pcap
     type: byte
     unbuffered: 'True'
     vlen: '1'
@@ -387,9 +387,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [264, 536.0]
+    coordinate: [272, 536.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: fft_vxx_0
   id: fft_vxx
   parameters:
@@ -530,7 +530,7 @@ blocks:
     log: 'False'
     maxoutbuf: '0'
     minoutbuf: '0'
-    sync_length: '320'
+    sync_length: '240'
   states:
     bus_sink: false
     bus_source: false
@@ -549,7 +549,7 @@ blocks:
     maxoutbuf: '0'
     min_plateau: '2'
     minoutbuf: '0'
-    threshold: '0.75'
+    threshold: '0.80'
   states:
     bus_sink: false
     bus_source: false
@@ -774,7 +774,7 @@ blocks:
     bus_structure: null
     coordinate: [64, 600.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: qtgui_sink_x_0_0_0_0
   id: qtgui_sink_x
   parameters:
@@ -801,7 +801,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1512, 552.0]
+    coordinate: [1520, 584.0]
     rotation: 0
     state: disabled
 - name: qtgui_time_sink_x_0
@@ -959,7 +959,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [672, 384.0]
+    coordinate: [736, 376.0]
     rotation: 0
     state: enabled
 
